@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,7 @@
 </head>
 
 <body style="background-color:rgba(202, 201, 201, 0.932);">
-  <img src="./public/1.png" alt="" width="1600" height="450" srcset="">
+  <img src="../../../public/1.png" alt="" width="1280px" height="450" srcset="">
   <div class="container">
 
   <div class="row">
@@ -27,24 +26,24 @@
             <a type="button" class="nav-link active btn btn-success" href="login.php">Login</a>
         </li>
     <li class="nav-item" style="float: right;">
-        <a type="button" class="nav-link active  btn btn-success" href="regis.php">Register</a>
+        <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Control/regis');?>/">Register</a>
     </li>
     <li class="nav-item" style="float: right;">
         <a type="button" class="nav-link active  btn btn-success" href="index.php">Home</a>
     </li>
 </ul>
 
-    </div>
+</div>
     <div class="row">
       <div class="col-md-5">
         <!---row1-->
         <br>
         <h3>แบบฟอร์มลงทะเบียนศิษย์เก่า</h3>
-        <img src="2.PNG" alt="" width="250" height="250" srcset="">
+        <img src="../../../public/2.png" alt="" width="250" height="250" srcset="">
         <br>
         <br>
 
-        <form action="add.php" method="POST" enctype="multipart/form-data">
+        <form action="<?php echo site_url('Control/reg');?>" method="POST">
           <h4>อัพโหลดรูปตัวเอง</h4>
           <a href="#" class="btn btn-primary btn-lg active" role="button" type="submit"><input type="file" name="img" id="img" accept="image/*"></a>
 
@@ -91,7 +90,7 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group " align="left">
             <label for="Input3" style="margin-bottom: 0">บัตรประชาชน(ใช้ในการเข้าสู่ระบบ)</label>
-            <input type="text" class="form-control" id="Input3" placeholder="" name="cardname" value="" required>
+            <input type="text" class="form-control" id="Input3" placeholder="" name="cardid" value="" required>
           </div>
         </div>
 
@@ -219,7 +218,7 @@
         </div>
         <!--จังหวัด-->
 
-        <hr width=150% size=3>
+        <hr width=100% size=3>
 
         <h3>ข้อมูลส่วนตัว</h3>
         <div class="form-group col-md-8" style="margin-bottom: 0">
@@ -334,7 +333,7 @@
         </div>
         <!--จังหวัด-->
 
-        <hr width=150% size=3>
+        <hr width=100% size=3>
         <h1>ข้อมูลติดต่อ</h1>
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">

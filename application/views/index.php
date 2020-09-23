@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-
-    <img src="./public/1.jpg" alt="" width="1600" height="450" srcset="">
+    <img src="./public/1.png" alt="" width="1280px" height="450" srcset="">
     <div class="container">
 
         <div class="row">
@@ -26,11 +25,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <ul class="nav nav-pills">
 
 
-                    <li class="nav-item" style="float: right;">
-                        <a type="button" class="nav-link active btn btn-success" href="login.php">Login</a>
-                    </li>
                 <li class="nav-item" style="float: right;">
-                    <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Welcome/regis');?>/">Register</a>
+                    <a type="button" class="nav-link active btn btn-success" href="<?php echo site_url(''); ?>">Login</a>
+                </li>
+                <li class="nav-item" style="float: right;">
+                    <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Control/regis'); ?>/">Register</a>
                 </li>
                 <li class="nav-item" style="float: right;">
                     <a type="button" class="nav-link active  btn btn-success" href="index.php">Home</a>
@@ -57,22 +56,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </thead>
             <!-----สิ้นสุดส่วนหัว------>
 
-                <tbody>
-
+            <tbody>
+                <?php
+                foreach ($shows->result_array() as $show) { ?>
                     <tr>
-                        <td>
-                            <div align="center"></div>
-                        </td>
-                        <td>
-                            <div align="center"></div>
-                        </td>
-                        <td>
-                            <div align="center"></div>
-                        </td>
+                        <?php echo "<td>" . $show['p_id'] . "</td>"; ?>
+                        <?php echo "<td>" . $show['cname'] . "</td>"; ?>
+                        <?php echo "<td>" . $show['lname'] . "</td>"; ?>
                         <td align="center"><a href=""><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
                     </tr>
-                </tbody>
-                <!-----สินสุดส่วนข้างใน------>
+            </tbody>
+            <!-----สินสุดส่วนข้างใน------>
+        <?php } ?>
         </table>
     </div>
 
@@ -88,7 +83,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <br>
         <br>
     </footer>
-
 </body>
 
 </html>
