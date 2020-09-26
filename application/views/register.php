@@ -17,23 +17,23 @@
   <img src="../../../public/1.png" alt="" width="1280px" height="450" srcset="">
   <div class="container">
 
-  <div class="row">
+    <div class="row">
 
-<ul class="nav nav-pills">
+      <ul class="nav nav-pills">
 
 
         <li class="nav-item" style="float: right;">
-            <a type="button" class="nav-link active btn btn-success" href="login.php">Login</a>
+          <a type="button" class="nav-link active btn btn-success" href="login.php">Login</a>
         </li>
-    <li class="nav-item" style="float: right;">
-        <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Control/regis');?>/">Register</a>
-    </li>
-    <li class="nav-item" style="float: right;">
-        <a type="button" class="nav-link active  btn btn-success" href="index.php">Home</a>
-    </li>
-</ul>
+        <li class="nav-item" style="float: right;">
+          <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Control/regis'); ?>/">Register</a>
+        </li>
+        <li class="nav-item" style="float: right;">
+          <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url(); ?>">Home</a>
+        </li>
+      </ul>
 
-</div>
+    </div>
     <div class="row">
       <div class="col-md-5">
         <!---row1-->
@@ -43,7 +43,7 @@
         <br>
         <br>
 
-        <form action="<?php echo site_url('Control/reg');?>" method="POST">
+        <form action="<?php echo site_url('Control/reg'); ?>" method="POST">
           <h4>อัพโหลดรูปตัวเอง</h4>
           <a href="#" class="btn btn-primary btn-lg active" role="button" type="submit"><input type="file" name="img" id="img" accept="image/*"></a>
 

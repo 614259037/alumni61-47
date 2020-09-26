@@ -17,6 +17,7 @@ class Control extends CI_Controller
 	{
 		$this->load->view('register');
 	}
+	//เพิ่มข้อมูล
 	public function reg()
 	{
 		$customer = array(
@@ -47,9 +48,17 @@ class Control extends CI_Controller
 		$this->crud->insert_contact($contact);
 		$this->load->view('suc');
 	}
+	//โชข้อมูลทั้งหมด
 	public function showall()
 	{
 		$result['show'] = $this->crud->showstud();
 		$this->load->view('view_menu', $result);
+	}
+	// เเสดงข้อมูลเเต่ละคน
+	public function show_users()
+	{
+		$get_id = $this->input->get("user_id");
+		$select_user['user_select'] = $this->crud->data_users($get_id);
+		$this->load->view('show_user', $select_user);
 	}
 }

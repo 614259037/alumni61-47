@@ -26,13 +26,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 
                 <li class="nav-item" style="float: right;">
-                    <a type="button" class="nav-link active btn btn-success" href="<?php echo site_url(''); ?>">Login</a>
+                    <a type="button" class="nav-link active btn btn-success" href="">Login</a>
                 </li>
                 <li class="nav-item" style="float: right;">
                     <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url('Control/regis'); ?>/">Register</a>
                 </li>
                 <li class="nav-item" style="float: right;">
-                    <a type="button" class="nav-link active  btn btn-success" href="index.php">Home</a>
+                    <a type="button" class="nav-link active  btn btn-success" href="<?php echo site_url(); ?>">Home</a>
                 </li>
             </ul>
 
@@ -63,7 +63,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         <?php echo "<td>" . $show['p_id'] . "</td>"; ?>
                         <?php echo "<td>" . $show['cname'] . "</td>"; ?>
                         <?php echo "<td>" . $show['lname'] . "</td>"; ?>
-                        <td align="center"><a href=""><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
+                        <td align="center"><a href=<?php echo site_url('Control/show_users') . "/show_user?user_id=" . $show['p_id'] . "" ?>><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
                     </tr>
             </tbody>
             <!-----สินสุดส่วนข้างใน------>
