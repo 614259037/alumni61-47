@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="<?php echo site_url(); ?>">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,10 +35,10 @@
             </form>
         </div>
     </nav>
-    <img src="./public/1.png" alt="" width="1280px" height="450" srcset="">
+    <img src="../../public/1.png" alt="" width="1280px" height="450" srcset="">
     <div class="container">
         <div class="col-md-5">
-            <h3>ข้อมูลศิษย์เก่า</h3>
+            <h3>ข้อมูลศิษย์เก่าที่ค้นหา</h3>
         </div>
         <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -58,15 +58,14 @@
 
             <tbody>
                 <?php
-                foreach ($shows->result_array() as $show) { ?>
+                foreach ($result as $show) { ?>
                     <tr>
-                        <?php echo "<td>" . $show['p_id'] . "</td>"; ?>
-                        <?php echo "<td>" . $show['cname'] ."&nbsp;&nbsp".$show['lname'] . "</td>"; ?>
-                        <?php echo "<td>" . $show['years'] . "</td>"; ?>
-                        <td align="center"><a href=<?php echo site_url('Control/show_users') . "/show_user?user_id=" . $show['p_id'] . "" ?>><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
+                        <?php echo "<td>" . $show->p_id;"</td>"; ?>
+                        <?php echo "<td>" . $show->cname."&nbsp;&nbsp".$show->lname;"</td>"; ?>
+                        <?php echo "<td>" . $show->years;"</td>"; ?>
+                        <td align="center"><a href=<?php echo site_url('Control/show_users') . "/show_user?user_id=" . $show->p_id; "" ?>><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
                     </tr>
             </tbody>
-            
             <!-----สินสุดส่วนข้างใน------>
         <?php } ?>
         </table>

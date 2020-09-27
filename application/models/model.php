@@ -9,7 +9,7 @@ class model extends CI_Model
     //โชทั้งหมด
     function showstud()
     {
-        $this->db->select('p_id, cname, lname');
+        $this->db->select('p_id, cname, lname,years');
         $result = $this->db->get('customer');
         return $result;
     }
@@ -30,7 +30,13 @@ class model extends CI_Model
     function data_users($mid)
     {
         $result = $this->db->get_where('customer', array('p_id' => $mid));
-        $this->db->select('p_id','fname','lname');
+        $this->db->select('p_id','years','fname','cname','lname','nname','dates	','caddress','img','province','cardid');
         return $result;
+    }
+    //search
+    public function search($key){
+        $this->db->like('cname', $key);
+        $result = $this->db->get('customer');
+        return $result->result();
     }
 }
