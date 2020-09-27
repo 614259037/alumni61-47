@@ -8,6 +8,7 @@ class Control extends CI_Controller
 		parent::__construct();
 		$this->load->model('model', 'crud');
 	}
+	//โชหน้าต่างๆ
 	public function index()
 	{
 		$result['shows'] = $this->crud->showstud();
@@ -17,6 +18,12 @@ class Control extends CI_Controller
 	{
 		$this->load->view('register');
 	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
+
+
 	//เพิ่มข้อมูล
 	public function reg()
 	{
@@ -61,4 +68,12 @@ class Control extends CI_Controller
 		$select_user['user_select'] = $this->crud->data_users($get_id);
 		$this->load->view('show_user', $select_user);
 	}
+	//search
+	public function keyword(){
+		
+		$key = $this->input->post('search');
+		$data['result'] = $this->crud->search($key);
+		$this->load->view('search',$data);
+	}
+
 }
