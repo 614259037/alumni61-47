@@ -11,6 +11,8 @@ class Control extends CI_Controller
 	//โชหน้าต่างๆ
 	public function index()
 	{
+			//โชข้อมูลทั้งหมด
+
 		$result['shows'] = $this->crud->showstud();
 		$this->load->view('index', $result);
 	}
@@ -56,11 +58,6 @@ class Control extends CI_Controller
 		$this->load->view('suc');
 	}
 	//โชข้อมูลทั้งหมด
-	public function showall()
-	{
-		$result['show'] = $this->crud->showstud();
-		$this->load->view('view_menu', $result);
-	}
 	// เเสดงข้อมูลเเต่ละคน
 	public function show_users()
 	{
