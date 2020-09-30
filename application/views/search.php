@@ -35,7 +35,7 @@
             </form>
         </div>
     </nav>
-    <img src="../../public/1.png" alt="" width="1280px" height="450" srcset="">
+    <img src="<?php echo base_url('public/1.png')?>" alt="" width="1280px" height="450" srcset="">
     <div class="container">
         <div class="col-md-5">
             <h3>ข้อมูลศิษย์เก่าที่ค้นหา</h3>

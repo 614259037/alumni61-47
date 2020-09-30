@@ -5,7 +5,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light ">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="<?php echo site_url(); ?>">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -19,8 +19,8 @@
                     <a class="nav-link " href="<?php echo site_url('Control/regis'); ?>/">Register</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo site_url('Control/keyword')?>">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"name="search">
+            <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo site_url('Control/keyword') ?>">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
@@ -37,21 +37,23 @@
                     <div class="card-header">
                         <center>เข้าสู่ระบบ</center>
                     </div>
-                    <form method="POST" action="">
+                    <?php echo isset($error) ? $error : ''; ?>
+
+                    <form method="POST" action="<?php echo site_url('Control/chklogin'); ?>">
                         <div class="card-body">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">อีเมล</span>
                                 </div>
-                                <input name="username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input name="user" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroup-sizing-default">รหัสประจำตัวประชาชน</span>
                                 </div>
-                                <input name="password" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input name="pass" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
-                            <input class="btn btn-primary" type="submit" value="เข้าสู่ระบบ" name="submit">
+                            <input class="btn btn-primary" type="submit" value="Login" name="submit">
                         </div>
                     </form>
                 </div>

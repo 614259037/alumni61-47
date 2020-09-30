@@ -11,7 +11,7 @@ class Control extends CI_Controller
 	//โชหน้าต่างๆ
 	public function index()
 	{
-			//โชข้อมูลทั้งหมด
+		//โชข้อมูลทั้งหมด
 
 		$result['shows'] = $this->crud->showstud();
 		$this->load->view('index', $result);
@@ -66,11 +66,32 @@ class Control extends CI_Controller
 		$this->load->view('show_user', $select_user);
 	}
 	//search
-	public function keyword(){
-		
+	public function keyword()
+	{
+
 		$key = $this->input->post('search');
 		$data['result'] = $this->crud->search($key);
-		$this->load->view('search',$data);
+		$this->load->view('search', $data);
 	}
 
+	public function chklogin()
+	{ {
+			$user = $this->input->post('user');
+			$pass = $this->input->post('pass');
+			$data = $this->crud->login($user, $pass);
+			if ($data == true) {
+				$this->session->set_userdata(array('user' => $user));
+				redirect("Control/index");
+			} else {
+				$data['error'] = 'Your Account is Invalid';
+				$this->load->view('login', $data);
+			}
+		}
+	}
+	public function logout()
+	{
+		//removing session  
+		$this->session->unset_userdata('user');
+		redirect("Control/login");
+	}
 }

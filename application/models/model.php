@@ -27,15 +27,24 @@ class model extends CI_Model
         $this->db->insert('workplace', $workplace);
     }
     //โชข้อมูลเเต่ละคน
-    function data_users($mid)
+    function data_users($get_id)
     {
-        $result = $this->db->get_where('customer', array('p_id' => $mid));
-        $this->db->select('p_id','years','fname','cname','lname','nname','dates	','caddress','img','province','cardid');
+        $this->db->where('p_id', $get_id);
+        $result = $this->db->get('customer');
+        $this->db->select('p_id', 'years', 'fname', 'cname', 'lname', 'nname', 'dates	', 'caddress', 'img', 'province', 'cardid');
         return $result;
     }
     //search
-    public function search($key){
+    public function search($key)
+    {
         $this->db->like('cname', $key);
+        $result = $this->db->get('customer');
+        return $result->result();
+    }
+    function login($user, $pass)
+    {
+        $this->db->where('cname', $user);
+        $this->db->where('cardid', $pass);
         $result = $this->db->get('customer');
         return $result->result();
     }

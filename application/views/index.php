@@ -15,6 +15,9 @@
 </head>
 
 <body>
+Welcome <?php echo $this->session->userdata('user'); ?>
+<?php echo anchor('Control/logout', 'Logout'); ?>  
+
 <nav class="navbar navbar-expand-lg navbar-light ">
         <a class="navbar-brand" href="<?php echo site_url(); ?>">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +38,7 @@
             </form>
         </div>
     </nav>
-    <img src="./public/1.png" alt="" width="1280px" height="450" srcset="">
+    <img src="<?php echo base_url('public/1.png')?>" alt="" width="1280px" height="450" srcset="">
     <div class="container">
         <div class="col-md-5">
             <h3>ข้อมูลศิษย์เก่า</h3>
