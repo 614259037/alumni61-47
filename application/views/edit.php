@@ -25,11 +25,12 @@
         <h3>ข้อมูลศิษย์เก่า</h3>
         <br>
         <br>
-        <?php
-        foreach ($user_select->result_array() as $show){
         
+        <?php
+        foreach ($user_select->result_array() as $show)
         ?>
         <img src="../../../img/<?php echo $show['img'] ?>" width="250" height="250" srcset="">
+        <form action="<?php echo site_url('Control/edit') . "/edit?user_id=" . $this->session->userdata('p_id') . "" ?>" method="POST">
 
       </div>
       <div class="col-md-7">
@@ -47,14 +48,14 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group" align="left">
             <label for="Input3" style="margin-bottom: 0">ชื่อ</label>
-            <input type="text" class="form-control" id="Input3" placeholder="ชื่อ" name="cname" value="<?php echo $show['cname'] ?>" readonly>
+            <input type="text" class="form-control" id="Input3" placeholder="ชื่อ" name="cname" value="<?php echo $show['cname'] ?>" >
           </div>
         </div>
         <!--ชื่อ-->
         <div class="form-group col-md-4" style="margin-bottom: 0">
           <div class="form-group" align="left">
             <label for="Input3" style="margin-bottom: 0">นามสกุล</label>
-            <input type="text" class="form-control" id="Input3" placeholder="นามสกุล" name="lname" value="<?php echo $show['lname'] ?>" readonly>
+            <input type="text" class="form-control" id="Input3" placeholder="นามสกุล" name="lname" value="<?php echo $show['lname'] ?>" >
           </div>
         </div>
         <!--นามสกุล-->
@@ -62,7 +63,7 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group " align="left">
             <label for="Input3" style="margin-bottom: 0">ชื่อเล่น</label>
-            <input type="text" class="form-control" id="Input3" placeholder="ชื่อเล่น" name="nname" value="<?php echo $show['nname'] ?>" readonly>
+            <input type="text" class="form-control" id="Input3" placeholder="ชื่อเล่น" name="nname" value="<?php echo $show['nname'] ?>" >
           </div>
         </div>
         <!---ชื่อเล่น-->
@@ -70,7 +71,7 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group " align="left">
             <label for="Input3" style="margin-bottom: 0">วันเกิด</label>
-            <input type="date" class="form-control" id="Input3" name="dates" value="<?php echo $show['dates'] ?>" readonly>
+            <input type="date" class="form-control" id="Input3" name="dates" value="<?php echo $show['dates'] ?>" >
           </div>
         </div>
         <!--วันเกิด-->
@@ -78,14 +79,14 @@
         <div class="form-group col-md-3" style="margin-bottom: 0">
           <div class="form-group " align="left">
             <label for="Input2" style="margin-bottom: 0">ปีจบการศึกษา</label>
-            <input type="text" class="form-control" id="Input2" name="years" value="<?php echo $show['years'] ?>" readonly>
+            <input type="text" class="form-control" id="Input2" name="years" value="<?php echo $show['years'] ?>" >
           </div>
         </div>
         <!--ปีจบการศึกษา-->
         <div class="form-group col-md-12" style="margin-bottom: 0">
           <div class="form-group " align="left">
             <label for="Input3" style="margin-bottom: 0">ที่อยู่ปัจจุบัน</label><br>
-            <textarea name="caddress" id="form-control" rows="10" cols="60" readonly><?php echo $show['caddress'] ?></textarea>
+            <textarea name="caddress" id="form-control" rows="10" cols="60" ><?php echo $show['caddress'] ?></textarea>
           </div>
 
         </div>
@@ -94,7 +95,7 @@
         <div class="form-group col-md-3" style="margin-bottom: 0">
           <div class="form-group" align="left">
             <label for="Input2" style="margin-bottom: 0">จังหวัด</label>
-            <input type="text" class="form-control" id="Input2" name="province" value="<?php echo $show['province'] ?>" readonly>
+            <input type="text" class="form-control" id="Input2" name="province" value="<?php echo $show['province'] ?>" >
 
           </div>
         </div>
@@ -107,7 +108,7 @@
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">ตำแหน่งงาน</label>
-            <input type="text" class="form-control" id="form-control" placeholder="ตำแหน่งงาน" name="joblv" value="<?php echo $show['joblv'] ?>" readonly>
+            <input type="text" class="form-control" id="form-control" placeholder="ตำแหน่งงาน" name="joblv" value="<?php echo $show['cname'] ?>" >
           </div>
         </div>
         <!--ตำแหน่งงาน-->
@@ -115,14 +116,14 @@
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">ชื่อบริษัท</label>
-            <input type="text" class="form-control" id="form-control" placeholder="ชื่อบริษัท" name="jobname" value="<?php echo $show['jobname'] ?>" readonly>
+            <input type="text" class="form-control" id="form-control" placeholder="ชื่อบริษัท" name="jobname" value="<?php echo $show['cname'] ?>" >
           </div>
         </div>
         <!--ชื่อบริษัท-->
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12 " align="left">
             <label for="Input3" style="margin-bottom: 0">ที่อยู่บริษัท</label><br>
-            <textarea name="jobaddress" id="form-control" rows="10" cols="60" readonly><?php echo $show['jobaddress'] ?></textarea>
+            <textarea name="jobaddress" id="form-control" rows="10" cols="60" ><?php echo $show['cname'] ?></textarea>
           </div>
 
         </div>
@@ -131,7 +132,7 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input2" style="margin-bottom: 0">จังหวัด</label>
-            <input type="text" class="form-control" id="Input2" name="jobprov" value="<?php echo $show['jobprov'] ?>" readonly>
+            <input type="text" class="form-control" id="Input2" name="jobprov" value="<?php echo $show['cname'] ?>" >
 
           </div>
         </div>
@@ -143,33 +144,37 @@
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">เบอร์โทรศัพท์บ้าน</label>
-            <input type="text" class="form-control" id="form-control" placeholder="เบอร์โทรศัพท์บ้าน" name="hphone" value="<?php echo $show['hphone'] ?>" readonly>
+            <input type="text" class="form-control" id="form-control" placeholder="เบอร์โทรศัพท์บ้าน" name="hphone" value="<?php echo $show['hphone'] ?>" >
           </div>
         </div>
         <!--เบอร์โทรศัพท์-->
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">อีเมล์</label>
-            <input type="email" class="form-control" id="form-control" placeholder="อีเมล์" name="email" value="<?php echo $show['email'] ?>" readonly>
+            <input type="email" class="form-control" id="form-control" placeholder="อีเมล์" name="email" value="<?php echo $show['email'] ?>" >
           </div>
         </div>
         <!--อีเมล-->
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">facebook</label>
-            <input type="text" class="form-control" id="form-control" placeholder="facebook" name="facebook" value="<?php echo $show['facebook'] ?>" readonly>
+            <input type="text" class="form-control" id="form-control" placeholder="facebook" name="facebook" value="<?php echo $show['facebook'] ?>" >
           </div>
         </div>
         <!--facebook-->
-
-
+        <div class="form-group col-md-8" style="margin-bottom: 0">
+          <div class="form-group col-md-12" align="left">
+            <button type="submit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" align="center">บันทึก</a>
+          </div>
+        </div>
+        <!--facebook-->
       </div>
       <!---Endrow2-->
 
     </div>
 
   </div>
-        <?php }?>
+  </form>
   <footer style="background-color:rgba(230, 148, 152, 0.973);">
     <br>
     <br>

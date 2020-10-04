@@ -29,23 +29,42 @@ class model extends CI_Model
     //โชข้อมูลเเต่ละคน
     function data_users($get_id)
     {
-        $this->db->where('p_id', $get_id);
-        $result = $this->db->get('customer');
-        $this->db->select('p_id', 'years', 'fname', 'cname', 'lname', 'nname', 'dates	', 'caddress', 'img', 'province', 'cardid');
+        $result = $this->db->select('*')
+            ->from("customer")
+            ->join('contact', 'contact.p_id = customer.p_id')
+            ->join('workplace', 'workplace.p_id = customer.p_id')
+            ->where("customer.p_id", $get_id)
+            ->get();
         return $result;
     }
     //search
-    public function search($key)
+    function search($key)
     {
         $this->db->like('cname', $key);
         $result = $this->db->get('customer');
         return $result->result();
     }
+    //เเก้ไข
     function login($user, $pass)
     {
         $this->db->where('cname', $user);
         $this->db->where('cardid', $pass);
         $result = $this->db->get('customer');
-        return $result->result();
+        return $result->row();
+    }
+    function update_customer($customer, $p_id)
+    {
+        $this->db->where('p_id', $p_id);
+        $this->db->update('customer', $customer);
+    }
+    function update_contact($contact, $p_id)
+    {
+        $this->db->where('p_id', $p_id);
+        $this->db->update('contact', $contact);
+    }
+    function update_workplace($workplace, $p_id)
+    {
+        $this->db->where('p_id', $p_id);
+        $this->db->update('workplace', $workplace);
     }
 }

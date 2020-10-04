@@ -15,30 +15,7 @@
 </head>
 
 <body>
-Welcome <?php echo $this->session->userdata('user'); ?>
-<?php echo anchor('Control/logout', 'Logout'); ?>  
-
-<nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="<?php echo site_url(); ?>">Home</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo site_url('Control/login'); ?>/">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="<?php echo site_url('Control/regis'); ?>/">Register</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo site_url('Control/keyword')?>">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"name="search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    <img src="<?php echo base_url('public/1.png')?>" alt="" width="1280px" height="450" srcset="">
+    <img src="<?php echo base_url('public/1.png') ?>" alt="" width="1280px" height="450" srcset="">
     <div class="container">
         <div class="col-md-5">
             <h3>ข้อมูลศิษย์เก่า</h3>
@@ -64,12 +41,12 @@ Welcome <?php echo $this->session->userdata('user'); ?>
                 foreach ($shows->result_array() as $show) { ?>
                     <tr>
                         <?php echo "<td>" . $show['p_id'] . "</td>"; ?>
-                        <?php echo "<td>" . $show['cname'] ."&nbsp;&nbsp".$show['lname'] . "</td>"; ?>
+                        <?php echo "<td>" . $show['cname'] . "&nbsp;&nbsp" . $show['lname'] . "</td>"; ?>
                         <?php echo "<td>" . $show['years'] . "</td>"; ?>
                         <td align="center"><a href=<?php echo site_url('Control/show_users') . "/show_user?user_id=" . $show['p_id'] . "" ?>><input style="color: red" class="b2" name="delete" type="submit" value="ดูประวัติส่วนตัว" /></a></td>
                     </tr>
             </tbody>
-            
+
             <!-----สินสุดส่วนข้างใน------>
         <?php } ?>
         </table>
