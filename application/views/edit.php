@@ -108,7 +108,7 @@
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">ตำแหน่งงาน</label>
-            <input type="text" class="form-control" id="form-control" placeholder="ตำแหน่งงาน" name="joblv" value="<?php echo $show['cname'] ?>" >
+            <input type="text" class="form-control" id="form-control" placeholder="ตำแหน่งงาน" name="joblv" value="<?php echo $show['joblv'] ?>" >
           </div>
         </div>
         <!--ตำแหน่งงาน-->
@@ -116,14 +116,14 @@
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">ชื่อบริษัท</label>
-            <input type="text" class="form-control" id="form-control" placeholder="ชื่อบริษัท" name="jobname" value="<?php echo $show['cname'] ?>" >
+            <input type="text" class="form-control" id="form-control" placeholder="ชื่อบริษัท" name="jobname" value="<?php echo $show['jobname'] ?>" >
           </div>
         </div>
         <!--ชื่อบริษัท-->
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12 " align="left">
             <label for="Input3" style="margin-bottom: 0">ที่อยู่บริษัท</label><br>
-            <textarea name="jobaddress" id="form-control" rows="10" cols="60" ><?php echo $show['cname'] ?></textarea>
+            <textarea name="jobaddress" id="form-control" rows="10" cols="60" ><?php echo $show['jobaddress'] ?></textarea>
           </div>
 
         </div>
@@ -132,7 +132,7 @@
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input2" style="margin-bottom: 0">จังหวัด</label>
-            <input type="text" class="form-control" id="Input2" name="jobprov" value="<?php echo $show['cname'] ?>" >
+            <input type="text" class="form-control" id="Input2" name="jobprov" value="<?php echo $show['jobprov'] ?>" >
 
           </div>
         </div>
