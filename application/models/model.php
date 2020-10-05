@@ -44,7 +44,7 @@ class model extends CI_Model
         $result = $this->db->get('customer');
         return $result->result();
     }
-    //เเก้ไข
+    //login
     function login($user, $pass)
     {
         $this->db->where('cname', $user);
@@ -52,6 +52,7 @@ class model extends CI_Model
         $result = $this->db->get('customer');
         return $result->row();
     }
+      //เเก้ไข
     function update_customer($customer, $p_id)
     {
         $this->db->where('p_id', $p_id);
