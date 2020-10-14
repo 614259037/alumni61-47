@@ -52,7 +52,7 @@ class model extends CI_Model
         $result = $this->db->get('customer');
         return $result->row();
     }
-      //เเก้ไข
+    //เเก้ไข
     function update_customer($customer, $p_id)
     {
         $this->db->where('p_id', $p_id);

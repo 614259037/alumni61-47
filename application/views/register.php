@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <img src="<?php echo base_url('public/1.png') ?>" alt="" width="1280px" height="450" srcset="">
+  <img src="<?php echo base_url('public/1.png') ?>" alt="" width="100%" height="450" srcset="">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
@@ -26,9 +26,9 @@
         <br>
         <br>
 
-        <form action="<?php echo site_url('Control/reg'); ?>" method="POST">
+        <form action="<?php echo site_url('Control/reg'); ?>" enctype="multipart/form-data" method="POST">
           <h4>อัพโหลดรูปตัวเอง</h4>
-          <a href="#" class="btn btn-primary btn-lg active" role="button" type="submit"><input type="file" name="img" id="img" accept="image/*"></a>
+          <input type="file" name="img" id="img">
 
       </div>
       <!---Endrow1-->

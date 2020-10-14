@@ -31,8 +31,16 @@ class Control extends CI_Controller
 	//เพิ่มข้อมูล
 	public function reg()
 	{
+		$config['upload_path']   = './img/'; //Folder สำหรับ เก็บ ไฟล์ที่  Upload
+		$config['allowed_types'] = 'gif|jpg|png'; //รูปแบบไฟล์ที่ อนุญาตให้ Upload ได้
+		//$config['max_size']      = 100; //ขนาดไฟล์สูงสุดที่ Upload ได้ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		//$config['max_width']     = 1024; //ขนาดความกว้างสูงสุด (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		//$config['max_height']    = 768;  //ขนาดความสูงสูงสดุ (กรณีไม่จำกัดขนาด กำหนดเป็น 0)
+		$config['encrypt_name']  = true; //กำหนดเป็น true ให้ระบบ เปลียนชื่อ ไฟล์  อัตโนมัติ  ป้องกันกรณีชื่อไฟล์ซ้ำกัน
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('img');
 		$customer = array(
-			'img' => $this->input->post("img"),
+			'img' => $this->upload->data("file_name"),
 			'fname' => $this->input->post("fname"),
 			'cname' => $this->input->post("cname"),
 			'lname' => $this->input->post("lname"),
@@ -57,7 +65,7 @@ class Control extends CI_Controller
 		$this->crud->insert_customer($customer);
 		$this->crud->insert_workplace($workplace);
 		$this->crud->insert_contact($contact);
-		$this->load->view('suc');
+		redirect("Control/index");
 	}
 	// เเสดงข้อมูลเเต่ละคน
 	public function show_users()
