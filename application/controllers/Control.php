@@ -40,7 +40,7 @@ class Control extends CI_Controller
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('img');
 		$customer = array(
-			'c_user' => $this->input->post("c_user"),
+			'c_pass' => $this->input->post("c_pass"),
 			'img' => $this->upload->data("file_name"),
 			'fname' => $this->input->post("fname"),
 			'cname' => $this->input->post("cname"),

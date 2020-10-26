@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 02, 2020 at 06:04 AM
--- Server version: 5.7.17-log
--- PHP Version: 5.6.30
+-- Generation Time: Oct 26, 2020 at 03:08 PM
+-- Server version: 8.0.17
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `alumni`
+-- Database: `alumni47`
 --
 
 -- --------------------------------------------------------
@@ -32,13 +34,6 @@ CREATE TABLE `contact` (
   `email` varchar(100) NOT NULL,
   `facebook` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`p_id`, `hphone`, `email`, `facebook`) VALUES
-(0001, '01354684', 'a@a.com', '-');
 
 -- --------------------------------------------------------
 
@@ -57,15 +52,9 @@ CREATE TABLE `customer` (
   `caddress` varchar(500) DEFAULT NULL,
   `img` varchar(100) DEFAULT NULL,
   `province` varchar(100) DEFAULT NULL,
-  `cardid` varchar(13) DEFAULT NULL
+  `cardid` varchar(13) DEFAULT NULL,
+  `c_pass` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`p_id`, `years`, `fname`, `cname`, `lname`, `nname`, `dates`, `caddress`, `img`, `province`, `cardid`) VALUES
-(0001, '2555', 'นาย', 'ธันวา', 'กุนทะมุณี ่', 'เจมส์่', '2020-07-17', '177/1 73180', '', 'เชียงราย', '0123456788');
 
 -- --------------------------------------------------------
 
@@ -80,13 +69,6 @@ CREATE TABLE `workplace` (
   `jobaddress` varchar(500) NOT NULL,
   `jobprov` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `workplace`
---
-
-INSERT INTO `workplace` (`p_id`, `joblv`, `jobname`, `jobaddress`, `jobprov`) VALUES
-(0001, 'พนักงาน ่', 'advice ่', '178/1 ่', 'ตาก');
 
 --
 -- Indexes for dumped tables
@@ -118,17 +100,20 @@ ALTER TABLE `workplace`
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `p_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `p_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `p_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `workplace`
 --
 ALTER TABLE `workplace`
-  MODIFY `p_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `p_id` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- Constraints for dumped tables
 --
@@ -144,6 +129,7 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `workplace`
   ADD CONSTRAINT `workplace_ibfk_1` FOREIGN KEY (`p_id`) REFERENCES `customer` (`p_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
