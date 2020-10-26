@@ -40,6 +40,7 @@ class Control extends CI_Controller
 		$this->load->library('upload', $config);
 		$this->upload->do_upload('img');
 		$customer = array(
+			'c_user' => $this->input->post("c_user"),
 			'img' => $this->upload->data("file_name"),
 			'fname' => $this->input->post("fname"),
 			'cname' => $this->input->post("cname"),
@@ -122,6 +123,7 @@ class Control extends CI_Controller
 	function edit()
 	{
 		$customer = array(
+			'c_pass' => $this->input->post("c_pass"),
 			'fname' => $this->input->post("fname"),
 			'cname' => $this->input->post("cname"),
 			'lname' => $this->input->post("lname"),

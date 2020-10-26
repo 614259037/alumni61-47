@@ -37,6 +37,12 @@
         <!---row2-->
         <br>
         <h3>ข้อมูลส่วนตัว</h3>
+        <div class="form-group col-md-5" style="margin-bottom: 0">
+          <div class="form-group" align="left">
+            <label for="Input3" style="margin-bottom: 0">รหัสผ่าน</label>
+            <input type="text" class="form-control" id="Input3" placeholder="รหัสผ่าน" name="c_pass" value="<?php echo $show['c_pass'] ?>" required>
+          </div>
+        </div>
         <div class="form-group col-md-3" style="margin-bottom: 0">
           <div class="form-group" align="left">
             <label for="Input2" style="margin-bottom: 0">คำนำหน้า</label>

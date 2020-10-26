@@ -41,14 +41,19 @@ class model extends CI_Model
     function search($key)
     {
         $this->db->like('cname', $key);
+        $this->db->or_like('province', $key);
+        $this->db->or_like('caddress', $key);
+        $this->db->or_like('years', $key);
+        $this->db->or_like('cardid', $key);
+        
         $result = $this->db->get('customer');
         return $result->result();
     }
     //login
     function login($user, $pass)
     {
-        $this->db->where('cname', $user);
-        $this->db->where('cardid', $pass);
+        $this->db->where('cardid', $user);
+        $this->db->where('c_pass', $pass);
         $result = $this->db->get('customer');
         return $result->row();
     }

@@ -43,13 +43,13 @@
                         <div class="card-body">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Username(ชื่อจริง)</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">เลขประจำตัวนักศึกษา</span>
                                 </div>
                                 <input name="user" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroup-sizing-default">Password(รหัสประจำตัว)</span>
+                                    <span class="input-group-text" id="inputGroup-sizing-default">รหัสผ่าน</span>
                                 </div>
                                 <input name="pass" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>

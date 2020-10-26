@@ -46,6 +46,12 @@
             </select>
           </div>
         </div>
+        <div class="form-group col-md-5" style="margin-bottom: 0">
+          <div class="form-group" align="left">
+            <label for="Input3" style="margin-bottom: 0">รหัสผ่าน</label>
+            <input type="text" class="form-control" id="Input3" placeholder="รหัสผ่าน" name="c_pass" value="" required>
+          </div>
+        </div>
         <!--คำนำ-->
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group" align="left">
@@ -72,7 +78,7 @@
 
         <div class="form-group col-md-5" style="margin-bottom: 0">
           <div class="form-group " align="left">
-            <label for="Input3" style="margin-bottom: 0">บัตรประชาชน(ใช้ในการเข้าสู่ระบบ)</label>
+            <label for="Input3" style="margin-bottom: 0">เลขประจำตัวนักศึกษา(ใช้ในการเข้าสู่ระบบ)</label>
             <input type="text" class="form-control" id="Input3" placeholder="" name="cardid" value="" required>
           </div>
         </div>
@@ -203,7 +209,7 @@
 
         <hr width=100% size=3>
 
-        <h3>ข้อมูลส่วนตัว</h3>
+        <h3>ข้อมูลการทำงาน</h3>
         <div class="form-group col-md-8" style="margin-bottom: 0">
           <div class="form-group col-md-12" align="left">
             <label for="Input3" style="margin-bottom: 0">ตำแหน่งงาน</label>
