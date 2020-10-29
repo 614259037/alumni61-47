@@ -22,7 +22,6 @@
         <!---row1-->
         <br>
         <h3>แบบฟอร์มลงทะเบียนศิษย์เก่า</h3>
-        <img src="../../../public/2.png" alt="" width="250" height="250" srcset="">
         <br>
         <br>
 
@@ -35,6 +34,12 @@
       <div class="col-md-7">
         <!---row2-->
         <br>
+        <div class="form-group col-md-5" style="margin-bottom: 0">
+          <div class="form-group" align="left">
+            <label for="Input3" style="margin-bottom: 0">กำหนดรหัสผ่านเพื่อใช้เข้าสู่ระบบ</label>
+            <input type="password" class="form-control" id="Input3" placeholder="รหัสผ่าน" name="c_pass" value="" required>
+          </div>
+        </div>
         <h3>ข้อมูลส่วนตัว</h3>
         <div class="form-group col-md-3" style="margin-bottom: 0">
           <div class="form-group" align="left">
@@ -44,12 +49,6 @@
               <option>นาง</option>
               <option>นางสาว</option>
             </select>
-          </div>
-        </div>
-        <div class="form-group col-md-5" style="margin-bottom: 0">
-          <div class="form-group" align="left">
-            <label for="Input3" style="margin-bottom: 0">รหัสผ่าน</label>
-            <input type="text" class="form-control" id="Input3" placeholder="รหัสผ่าน" name="c_pass" value="" required>
           </div>
         </div>
         <!--คำนำ-->
