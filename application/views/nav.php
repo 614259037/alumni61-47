@@ -14,7 +14,7 @@
                    </li>
                    <li class="nav-item">
 
-                       <a class="nav-link " href=" <?php echo site_url('Control/show_edit') . "/edit?user_id=" . $this->session->userdata('p_id') . "" ?>">เเก้ไข</a>
+                       <a class="nav-link " href=" <?php echo site_url('Control/show_edit')  ?>">เเก้ไข</a>
                    </li>
                    <li class="nav-item">
                        <a class="nav-link" <?php echo anchor('Control/logout', "Logout"); ?> </li> </ul> <form class="form-inline my-2 my-lg-0" method="post" action="<?php echo site_url('Control/keyword') ?>">

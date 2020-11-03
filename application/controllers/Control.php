@@ -114,7 +114,8 @@ class Control extends CI_Controller
 	//เเสดงหน้าเเก้ไข
 	public function show_edit()
 	{
-		$get_id = $this->input->get("user_id");
+
+		$get_id = $this->session->userdata('p_id');
 		$select_user['user_select'] = $this->crud->data_users($get_id);
 		$this->load->view('nav');
 		$this->load->view('edit', $select_user);
