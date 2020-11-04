@@ -153,4 +153,7 @@ class Control extends CI_Controller
 		$this->crud->update_contact($contact, $p_id);
 		redirect("Control/index");
 	}
+	//ลบข้อมูล 
+	//$this->db->where('colum', 'ตัวแปร');
+	//$this->db->delete('tablename');
 }
